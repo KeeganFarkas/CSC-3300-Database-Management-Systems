@@ -1,0 +1,1 @@
+This application allows the user to connect to a database and execute queries.

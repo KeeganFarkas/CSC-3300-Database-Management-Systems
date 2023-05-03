@@ -1,0 +1,1 @@
+This is my 4th project in my DBMS class. I designed a relational diagram for a given description, and then wrote the MySQL script for the schema.

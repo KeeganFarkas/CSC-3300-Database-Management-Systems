@@ -1,0 +1,91 @@
+group: CSC3300-001 - LibraryDB
+description[[Dataset for the Library database schema from the lectures of the CSC3300 DBMS course in Spring 2023.]]
+
+BOOK = {title:string, genre:string, ISBN:string, date_published:date, publisher:string, edition:string, description:string
+'Discrete Mathematics', Textbook, 978-1-57766-730-8, 2011-01-01, 'Waveland Press, Inc.', 1, 'Textbook for the "Discrete Structures of the CS" college level course.'
+'Alice in Wonderland', fiction, 979-8749522310, 2021-05-06, 'Independently published', 1, 'This edition of the book includes original illustrations.'
+'Green Eggs and Ham', 'Childrens literature', 978-0375810886, 2001-01-01, 'Random House Books for Young Readers', 1, 'One of the most famous books by Dr. Seuss.'
+'The Body Keeps the Score', non-fiction, 978-0143127741, 2015-09-08, 'Penguin Publishing Group', 1, 'A book on trauma.'
+'Little Women', 'Coming of age', 978-1950435098, 2019-03-02, 'SeaWolf Press', 1, 'A coming-of-age novel written in 1868.'
+'Introduction to Automata Theory, Languages, and Computation', Textbook, 978-0321455369, 2006-06-29, Pearson, 3, 'Book on formal languages, automata theory, and computational complexity.'
+'Database Systems: A Practical Approach to Design, Implementation, and Management', Textbook, 978-0132943260, 2014-01-08,  Pearson, 6, 'Ideal for a one or two term course in database management or database design in an undergraduate or graduate level.'
+'Oregon Archaeology', History, 978-0870716065, 2011-10-01, 'Oregon State University Press', 1, 'Recent archeological findings on the history of Oregon.'
+'Compilers: Principles, Techniques, and Tools', textbook, 978-0321486813, 2006-08-31, 'Addison Wesley', 2, 'On software engineering, programming languages, and computer architecture.'
+}
+
+AUTHOR = {author_id:number, first_name:string, middle_name:string, last_name:string
+0, Gary, null, Chartrand
+1, Ping, null, Zhang
+2, Levis, null, Carroll
+3, Theodor, null, Seuss
+4, Bessel, null, 'van der Kolk'
+5, Louisa, May, Alcott 
+6, John, E., Hopcroft
+7, Rajeev, null, Motwani
+8, Jeffrey, D., Ullman
+9, Thomas, M., Connolly
+10, Carolyn, E., Begg
+11, Melvin, C., Aikens
+12, Thomas, J., Connolly
+13, Dennis, L., Jenkins
+14, Alfred, V., Aho
+15, Monica, S., Lam
+16, Ravi, null, Sethi
+}
+
+BOOK_AUTHOR = {ISBN:string, author_id:number
+978-1-57766-730-8, 0
+978-1-57766-730-8, 1
+979-8749522310, 2
+978-0375810886, 3
+978-0143127741, 4
+978-1950435098, 5
+978-0321455369, 6
+978-0321455369, 7
+978-0321455369, 8
+978-0132943260, 9
+978-0132943260, 10
+978-0870716065, 11
+978-0870716065, 12
+978-0870716065, 13
+978-0321486813, 8
+978-0321486813, 14
+978-0321486813, 15
+978-0321486813, 16
+}
+
+COPY = {barcode:number, ISBN:string, condition:string
+1100, 978-1-57766-730-8, null
+1101, 978-0132943260, null
+1102, 978-0132943260, null
+1103, 978-0132943260, 'Pencil on about 10 pages.'
+1104, 978-0132943260, null
+1105, 978-1950435098, null
+1106, 978-1950435098, null
+1107, 978-1950435098, null
+1108, 978-1950435098, null
+1109, 978-0870716065, null
+1110, 978-0870716065, null
+1111, 979-8749522310, null
+1112, 978-037581088, null
+1113, 978-0143127741, null
+1114, 978-0321455369, null
+1115, 978-0321486813, null
+}
+
+MEMBER = {card_no:number, first_name:string, middle_name:string, last_name:string, street:string, city:string, state:string, apt_no:number, zip_code:number, phone_no:number, email:string, card_exp_date:date
+330, 'Anna', null, 'Green', Broad, Cookeville, TN, 4, 38501, 9311234567, 'annagreen@tntech.edu', 2022-08-08
+331, 'Ben', 'Leo', 'Brown', Broad, Cookeville, TN, 124, 38501, 9312023030, 'benlbrown@tntech.edu', 2022-10-21
+332, 'Paul', null, 'Smith', Spring, Cookeville, TN, 23, 38506, 9313321314, 'paulsmith@tntech.edu', 2023-03-11
+333, 'Evan', 'David', 'Bailey', Jefferson, Cookeville, TN, 901, 38501, 9311234567, 'annagreen@tntech.edu', 2022-08-08
+334, 'Keith', 'Logan', 'Bailey', Jefferson, Cookeville, TN, 901, 38501, 9311234567, null, 2024-12-29
+}
+
+BORROW = {card_no:number, barcode:number, date_borrowed:date, hour_borrowed:number, min_borrowed:number, date_returned:date, hour_returned:number, min_returned:number, renewals_no:number, paid:string
+330, 1111, 2022-08-25, 10, 10, null, null, null, 0, null
+331, 1105, 2022-09-03, 17, 56, null, null, null, 0, null
+330, 1112, 2022-06-01, 9, 5, 2022-06-01, 11, 36, 0, null
+331, 1105, 2022-08-15, 12, 7, 2022-08-25, 18, 30, 0, null
+332, 1114, 2022-09-03, 8, 01, null, null, null, 0, null
+333, 1113, 2022-08-01, 11, 31, null, null, null, 2, null
+}

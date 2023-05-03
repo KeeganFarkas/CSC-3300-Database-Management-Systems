@@ -1,0 +1,1 @@
+Second project in database management systems. I wrote some SQL queries on the given schema and insert files
